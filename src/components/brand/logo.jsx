@@ -141,7 +141,7 @@ export function Logo({ className, inverted = false, href = "/" }) {
             "text-md transition-colors md:text-xl",
             inverted
               ? "font-medium text-cream group-hover:text-white"
-              : "text-primary group-hover:text-primary/85 md:leading-7",
+              : "text-primary group-hover:text-primary/85 leading-3 md:leading-7",
           )}
         >
           BROTHERS CLUB
@@ -149,7 +149,7 @@ export function Logo({ className, inverted = false, href = "/" }) {
 
         <span
           className={cn(
-            "text-[0.6rem] font-medium tracking-[0.22em] md:mt-1 md:tracking-[0.30em]",
+            "text-[0.6rem] font-medium tracking-[0.22em] mt-1 md:tracking-[0.30em]",
             inverted ? "text-sage" : "text-muted-foreground",
           )}
         >
