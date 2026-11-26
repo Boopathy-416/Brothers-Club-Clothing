@@ -111,7 +111,7 @@ export function Logo({ className, inverted = false, href = "/" }) {
         <img
           src={WHITE_LOGO_URL}
           alt="Brothers Club Clothing"
-          className="h-10 w-auto shrink-0 object-contain md:h-14"
+          className="h-12 w-auto shrink-0 object-contain md:h-14"
         />
       ) : (
         <>
@@ -119,7 +119,7 @@ export function Logo({ className, inverted = false, href = "/" }) {
           <img
             src={DARK_LOGO_URL}
             alt="Brothers Club Clothing"
-            className="block h-10 w-auto shrink-0 object-contain dark:hidden md:h-14"
+            className="block h-12 w-auto shrink-0 object-contain dark:hidden md:h-14"
           />
 
           {/* Dark Theme Logo */}
@@ -149,7 +149,7 @@ export function Logo({ className, inverted = false, href = "/" }) {
 
         <span
           className={cn(
-            "text-[0.6rem] font-medium tracking-[0.22em] mt-1 md:tracking-[0.30em]",
+            "text-[0.6rem] font-medium tracking-[0.16em] mt-1 md:tracking-[0.30em]",
             inverted ? "text-sage" : "text-muted-foreground",
           )}
         >
