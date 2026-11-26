@@ -182,7 +182,16 @@
 @import 'tw-animate-css';
 @import 'shadcn/tailwind.css';
 
-@custom-variant dark (&:is(.dark *));
+@custom-variant dark {
+  &:where(.dark, .dark *) {
+    @slot;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root:not(.light) & {
+      @slot;
+    }
+  }
+}
 
 @theme inline {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
@@ -408,175 +417,5 @@
   }
   input[type='number'] {
     -moz-appearance: textfield;
-  }
-}
-
-
-
-
-
-.wa-widget {
-  position: fixed;
-  right: 25px;
-  bottom: 28px;
-  z-index: 9999;
-  display: flex;
-  align-items: flex-end;
-  gap: 14px;
-  font-family: inherit;
-}
-
-.wa-float-button {
-  position: relative;
-  width: 62px;
-  height: 62px;
-  border: none;
-  border-radius: 50%;
-  background: #20c76a;
-  color: white;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  gap: 9px;
-  cursor: pointer;
-  box-shadow: 0 8px 30px #0003;
-  transition: all .4s cubic-bezier(.2,.8,.2,1);
-  animation: wa-float 3s ease-in-out infinite;
-  flex-shrink: 0;
-}
-
-.wa-float-button:hover {
-  background: #159f53;
-  transform: scale(1.06);
-}
-
-.wa-button-label {
-  display: none;
-  font-size: 14px;
-  font-weight: 700;
-}
-
-.wa-notification {
-  position: absolute;
-  top: 3px;
-  right: 3px;
-  width: 12px;
-  height: 12px;
-  background: #ff3939;
-  border: 2px solid white;
-  border-radius: 50%;
-}
-
-.wa-panel {
-  width: 0;
-  opacity: 0;
-  overflow: hidden;
-  transform: translateX(25px);
-  pointer-events: none;
-  background: #fff;
-  border-radius: 16px;
-  box-shadow: 0 12px 45px #0002;
-  transition: all .4s cubic-bezier(.2,.8,.2,1);
-  flex-shrink: 0;
-}
-
-.wa-open .wa-panel {
-  width: 290px;
-  opacity: 1;
-  transform: translateX(0);
-  pointer-events: auto;
-  padding: 16px;
-}
-
-.wa-panel-header {
-  display: flex;
-  align-items: center;
-  gap: 10px;
-  padding-bottom: 14px;
-  border-bottom: 1px solid #eee;
-  color: #171717;
-}
-
-.wa-panel-header strong,
-.wa-panel-header small {
-  display: block;
-}
-
-.wa-panel-header strong {
-  font-size: 14px;
-}
-
-.wa-panel-header small {
-  font-size: 11px;
-  color: #777;
-  margin-top: 4px;
-}
-
-.wa-status-dot {
-  width: 11px;
-  height: 11px;
-  border-radius: 50%;
-  background: #20c76a;
-}
-
-.wa-message {
-  margin-top: 16px;
-  padding: 13px;
-  background: #f4f4f0;
-  color: #222;
-  border-radius: 12px;
-  font-size: 13px;
-  line-height: 1.6;
-}
-
-.wa-message p {
-  margin: 5px 0;
-}
-
-.wa-message small {
-  color: #888;
-  font-size: 10px;
-}
-
-.wa-chat-link {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  margin-top: 13px;
-  padding: 12px 15px;
-  border-radius: 9px;
-  background: #20c76a;
-  color: white;
-  text-decoration: none;
-  font-size: 13px;
-  font-weight: 700;
-  transition: background .2s;
-}
-
-.wa-chat-link:hover {
-  background: #159f53;
-}
-
-@keyframes wa-float {
-  0%, 100% { transform: translateY(0); }
-  50% { transform: translateY(-5px); }
-}
-
-@media (max-width: 600px) {
-  .wa-widget {
-    right: 15px;
-    bottom: 18px;
-  }
-
-  .wa-open .wa-panel {
-    width: min(270px, calc(100vw - 105px));
-  }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .wa-float-button,
-  .wa-panel {
-    animation: none;
-    transition: none;
   }
 }

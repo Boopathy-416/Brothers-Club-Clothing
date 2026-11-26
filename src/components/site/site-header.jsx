@@ -74,7 +74,7 @@
 //                 Wishlist
 //               </Link>
 //               <Link to="/admin" onClick={() => setMenuOpen(false)} className="rounded-md px-4 py-3 text-sm text-muted-foreground hover:bg-muted">
-//                 Staff login
+//                 
 //               </Link>
 //             </nav>
 //           </SheetContent>
@@ -239,13 +239,13 @@ export function SiteHeader() {
                 )
               })}
               <div className="my-2 border-t border-border" />
-              <Link
+              {/* <Link
                 to="/account"
                 onClick={() => setMenuOpen(false)}
                 className="rounded-md px-4 py-3 text-sm text-foreground transition-colors hover:bg-accent hover:text-accent-foreground"
               >
                 Retailer account
-              </Link>
+              </Link> */}
               <Link
                 to="/wishlist"
                 onClick={() => setMenuOpen(false)}
@@ -253,13 +253,13 @@ export function SiteHeader() {
               >
                 Wishlist
               </Link>
-              <Link
+              {/* <Link
                 to="/admin"
                 onClick={() => setMenuOpen(false)}
                 className="rounded-md px-4 py-3 text-sm text-muted-foreground transition-colors hover:bg-muted hover:text-foreground"
               >
                 Staff login
-              </Link>
+              </Link> */}
             </nav>
           </SheetContent>
         </Sheet>

@@ -129,12 +129,12 @@ export function SiteFooter() {
           <h2 className="text-[0.7rem] font-semibold tracking-[0.2em] text-sage uppercase">Retailers</h2>
           <ul className="mt-5 flex flex-col gap-3 text-sm">
             {[
-              ['/register', 'Become a retailer'],
-              ['/login', 'Retailer login'],
-              ['/account/enquiries', 'My enquiries'],
+              // ['/register', 'Become a retailer'],
+              // ['/login', 'Retailer login'],
+              // ['/account/enquiries', 'My enquiries'],
               ['/cart', 'Enquiry cart'],
               ['/about', 'About Winstar Tex'],
-              ['/admin', 'Staff login'],
+              // ['/admin', 'Staff login'],
             ].map(([href, label]) => (
               <li key={href}>
                 <Link to={href} className="text-cream/85 transition-colors hover:text-white">
