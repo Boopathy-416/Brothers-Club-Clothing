@@ -138,7 +138,7 @@ export function Logo({ className, inverted = false, href = "/" }) {
             letterSpacing: "0.04em",
           }}
           className={cn(
-            "text-lg transition-colors md:text-xl",
+            "text-md transition-colors md:text-xl",
             inverted
               ? "font-medium text-cream group-hover:text-white"
               : "text-primary group-hover:text-primary/85 md:leading-7",
